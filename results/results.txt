@@ -1,0 +1,134 @@
+
+======================================================================
+SETUP
+======================================================================
+Model: distilbert/distilgpt2
+torch: 2.15.0 | transformers: 5.22.2
+Parameters: 81912576
+Vocabulary size: 50257
+
+======================================================================
+1. TOKEN INSPECTION
+======================================================================
+
+Text:    'Hello world'
+Tokens:  ['Hello', 'Ġworld']  (2 tokens)
+IDs:     [15496, 995]
+Decoded: 'Hello world'
+
+Text:    'hello world'
+Tokens:  ['hello', 'Ġworld']  (2 tokens)
+IDs:     [31373, 995]
+Decoded: 'hello world'
+
+Text:    'The cat sat on the mat.'
+Tokens:  ['The', 'Ġcat', 'Ġsat', 'Ġon', 'Ġthe', 'Ġmat', '.']  (7 tokens)
+IDs:     [464, 3797, 3332, 319, 262, 2603, 13]
+Decoded: 'The cat sat on the mat.'
+
+Text:    'unbelievably'
+Tokens:  ['un', 'bel', 'iev', 'ably']  (4 tokens)
+IDs:     [403, 6667, 11203, 1346]
+Decoded: 'unbelievably'
+
+Text:    'Albuquerque'
+Tokens:  ['Al', 'buquerque']  (2 tokens)
+IDs:     [2348, 36461]
+Decoded: 'Albuquerque'
+
+Text:    'tokenization'
+Tokens:  ['token', 'ization']  (2 tokens)
+IDs:     [30001, 1634]
+Decoded: 'tokenization'
+
+Text:    '2026'
+Tokens:  ['20', '26']  (2 tokens)
+IDs:     [1238, 2075]
+Decoded: '2026'
+
+Text:    'COVID-19'
+Tokens:  ['CO', 'VID', '-', '19']  (4 tokens)
+IDs:     [8220, 11008, 12, 1129]
+Decoded: 'COVID-19'
+
+======================================================================
+2. REPEATABILITY (same prompt, controlled settings)
+======================================================================
+
+[Greedy, run 1]
+The best way to learn programming is|' to learn from the experience of the programmer.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Greedy, run 2]
+The best way to learn programming is|' to learn from the experience of the programmer.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Greedy, run 3]
+The best way to learn programming is|' to learn from the experience of the programmer.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Sampling temp=0.8, seed=42, run 1]
+The best way to learn programming is|' to follow the same rule as in your own programming:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Sampling temp=0.8, seed=42, run 2]
+The best way to learn programming is|' to follow the same rule as in your own programming:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Sampling temp=0.8, seed=42, run 3]
+The best way to learn programming is|' to follow the same rule as in your own programming:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Sampling temp=0.8, seed=1]
+The best way to learn programming is|' through a series of tutorials and tutorials on programming programming languages that cover the basics of programming languages and programming languages from the beginning. I\u202ave covered programming languages in Java, and my own programming languages'
+
+[Sampling temp=0.8, seed=2]
+The best way to learn programming is|' to learn to use both of them. The best way to learn programming is to learn to use both of them. The best way to learn programming is to learn to use both of them. The best'
+
+[Sampling temp=0.8, seed=3]
+The best way to learn programming is|' to read more than one or two books with the help of a great coach and an expert. If you have a book book, you can put a good number of online resources on it.\n\n'
+
+======================================================================
+3. CHANGING TEMPERATURE (seed=42, top_k=0, only temperature changes)
+======================================================================
+
+[temperature=0.2]
+Our new coffee shop is|' in the works.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[temperature=0.7]
+Our new coffee shop is|' gearing up for a new year in Toronto.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[temperature=1.0]
+Our new coffee shop is|' gearing up for a $100 grand operating income, ending its Vice Coast Lines takeover and boasting a $50 million minimum wage.\n\n\n\n\nThe American Bureau of Labor Statistics estimated the total American'
+
+[temperature=1.5]
+Our new coffee shop is|' gearing up worldwide to create new stores operating more sustainable parts, sustainably and once again would we say it farewell for us. For this It AC Jobs Thomas Colombat Sal Ruselve Dal made martinis'
+
+======================================================================
+4. CHANGING PROMPT WORDING (same task, greedy so only wording changes)
+======================================================================
+
+[Write about a coffee mug]
+Coffee mug|'.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Write about a coffee mug]
+Product description: This ceramic coffee mug|' is a perfect gift for a family of friends. It is a perfect gift for a family of friends. It is a perfect gift for a family of friends. It is a perfect gift for a family'
+
+[Write about a coffee mug]
+Q: Can you describe a ceramic coffee mug?
+A:|" I can't say. I can't say. I can't say. I can't say. I can't say. I can't say. I can't say. I can't say."
+
+[Write about a coffee mug]
+Our new ceramic coffee mug keeps your drink hot and|' fresh.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+======================================================================
+5. FAILURES AND LIMITATIONS (greedy)
+======================================================================
+
+[Fact]
+The capital of New Mexico is|' home to the largest number of marijuana dispensaries in the country.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Math]
+Q: What is 12 + 7?
+A:|' The answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that'
+
+[Instruction]
+Translate to Spanish: Good morning, how are you?|'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
+[Customer question]
+Customer: Is your product safe for children?
+Support agent:|'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
