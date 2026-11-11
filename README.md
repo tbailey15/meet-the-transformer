@@ -26,7 +26,10 @@ python -m pip install torch transformers
 python experiment.py > results/results.txt
 ```
 
+To get the exact versions I used, run `python -m pip install -r requirements.txt` instead.
+
 The first run downloads the model into the Hugging Face cache. Runs on CPU.
+I ran it twice and the output was identical both times, so the seeds work.
 
 ## Key ideas
 
